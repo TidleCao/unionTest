@@ -10,4 +10,25 @@
 
 @implementation UTTestItem
 
+- (UTErrorType)runTest {
+    
+    return UTErrorTypeNoError;
+}
+
+// 暂停停止
+- (void)stopTest {
+
+}
+
+// 放弃测试
+- (void)abortTest {
+
+}
+
+// 恢复暂停的测试
+- (void)resumeTest {
+    
+}
+
+
 @end

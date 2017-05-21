@@ -26,6 +26,7 @@
 		167C25ED1ED1BD9000C1828F /* UTTestItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTTestItem.m; sourceTree = "<group>"; };
 		167C25F01ED1BDA000C1828F /* UTTestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTTestEngine.h; sourceTree = "<group>"; };
 		167C25F11ED1BDA000C1828F /* UTTestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTTestEngine.m; sourceTree = "<group>"; };
+		167C25F51ED1E0B500C1828F /* UTErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTErrors.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		167C25DF1ED1BD5C00C1828F /* UTTestKit */ = {
 			isa = PBXGroup;
 			children = (
+				167C25F51ED1E0B500C1828F /* UTErrors.h */,
 				167C25E01ED1BD5C00C1828F /* UTTestKit.h */,
 				167C25E81ED1BD8100C1828F /* UTTestAction.h */,
 				167C25E91ED1BD8100C1828F /* UTTestAction.m */,

@@ -20,6 +20,6 @@ typedef NS_ENUM(NSUInteger, UTType) {
 @property UTType returnType;
 @property (readonly) id returnValue;
 
-- (void)runTest;
+- (void)execute;
 
 @end

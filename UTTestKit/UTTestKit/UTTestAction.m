@@ -10,7 +10,7 @@
 
 @implementation UTTestAction
 
-- (void)runTest {
+- (void)execute {
     
 }
 

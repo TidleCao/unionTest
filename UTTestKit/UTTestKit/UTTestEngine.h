@@ -7,37 +7,29 @@
 //
 
 #import <Foundation/Foundation.h>
-
-typedef NS_ENUM(NSUInteger, UTTestState) {
-    UTTestStateIDLE,
-    UTTestStateTesting,
-    UTTestStateFinished,
-    UTTestStateAborting,
-    UTTestStateAborted
-};
-
-typedef NS_ENUM(NSUInteger, UTErrorType) {
-    UTErrorTypeNoError,
-};
-
+#import "UTTestItem.h"
+#import "UTErrors.h"
 
 // MARK: - UTTestEngine
+
 @class UTTestEngine;
-@class UTTestItem;
-@class UTTestAction;
 
 @protocol UTTestEngineDelegate <NSObject>
 
+@required
 - (BOOL)shouldStartTestEngine: (UTTestEngine *)engine;
 - (BOOL)testEngine:(UTTestEngine *)engine shouldStartTestItem: (UTTestItem*)testItem;
-- (BOOL)testEngine:(UTTestEngine *)engine shouldStartTestAction:(UTTestAction*)testAction forTestItem:(UTTestItem*)testItem;
-- (void)testEngine:(UTTestEngine *)engine willStartTestAciotn:(UTTestAction*)testAction forTestItem:(UTTestItem*)testItem;
-- (void)testEngine:(UTTestEngine *)engine didFinishTestAction:(UTTestAction *)testAction forTestItem:(UTTestItem *)testItem;
-- (void)testEngine:(UTTestEngine *)engine willStopTestItem:(UTTestItem*)testItem;
-- (void)testEngine:(UTTestEngine *)engine didStopTestItem:(UTTestItem*)testItem;
-- (void)testEngine:(UTTestEngine *)engine willAbortTestItem:(UTTestItem*)testItem;
-- (void)testEngine:(UTTestEngine *)engine didAbortTestItem:(UTTestItem*)testItem;
+
+@optional
+
 - (void)willStartTestEngine:(UTTestEngine *)engine;
+- (void)testEngine:(UTTestEngine *)engine willStartTestItem:(UTTestItem *)testItem;
+- (void)testEngine:(UTTestEngine *)engine willStopTestItem:(UTTestItem*)testItem;
+- (void)testEngine:(UTTestEngine *)engine willAbortTestItem:(UTTestItem*)testItem;
+
+- (void)testEngine:(UTTestEngine *)engine didFinishTestItem:(UTTestItem *)testItem;
+- (void)testEngine:(UTTestEngine *)engine didStopTestItem:(UTTestItem*)testItem;
+- (void)testEngine:(UTTestEngine *)engine didAbortTestItem:(UTTestItem*)testItem;
 - (void)didFinishTestEngine:(UTTestEngine *)engine;
 
 @end
@@ -51,6 +43,7 @@ typedef NS_ENUM(NSUInteger, UTErrorType) {
 @end
 
 // MARK: - UTTestEngine
+
 @interface UTTestEngine : NSObject
 @property (weak) id<UTTestEngineDelegate> delegate;
 @property (readonly) UTTestState state;
@@ -62,3 +55,5 @@ typedef NS_ENUM(NSUInteger, UTErrorType) {
 - (UTErrorType)abortTest;
 
 @end
+
+
