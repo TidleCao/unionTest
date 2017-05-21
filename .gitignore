@@ -3,8 +3,8 @@
 .svn/
 DerivedData/
 build/
-xcuserdata/
-xcshareddata/
+xcshareddata
+xcuserdata
 
 *.swp
 *.lock
