@@ -53,10 +53,11 @@
     for (UTTestItem *testItem in _testItems) {
         
         // 如果用户点击暂停、放弃测试
-        if (_state != UTTestStateTesting ) {
+        if (_state == UTTestStatePausing || _state == UTTestStateAborting ) {
             break;
         }
         
+        _currentTestItem = testItem;
         // 判断是否需要测试该项目
         if (testItem.state == UTTestStateIDLE && [_delegate testEngine:self shouldStartTestItem:testItem]) {
             
@@ -65,7 +66,6 @@
                 [_delegate testEngine:self willStartTestItem:testItem];
             }
             
-            _currentTestItem = testItem;
             [_currentTestItem runTest];
             
             if ([_delegate respondsToSelector:@selector(testEngine:didFinishTestItem:)]) {
@@ -74,8 +74,12 @@
         }
     }
     
+    // 设置状态
+    
     if (_state == UTTestStateTesting) {
+        
         [self setState:UTTestStateFinished];
+        
     }
     
     _currentTestItem = nil;
@@ -117,4 +121,24 @@
     
 }
 
+- (void)testItemDidFinishTesting:(UTTestItem*)testItem {
+    
+}
+
+- (void)testItemDidAbortTesting:(UTTestItem*)testItem {
+    
+    if (_state == UTTestStateAborting) {
+        
+        [self setState:UTTestStateAborted];
+        
+    }
+
+}
+
+- (void)testItemDidStopTesting:(UTTestItem*)testItem {
+    
+    if (_state == UTTestStatePausing) {
+        [self setState:UTTestStatePaused];
+    }
+}
 @end

@@ -51,7 +51,11 @@
 @property (retain) NSMutableArray<UTTestItem *> *testItems;
 
 - (UTErrorType)startTest;
+
+// 暂停后可以继续测试下去
 - (UTErrorType)stopTest;
+
+// 放弃测试后不可继续测试
 - (UTErrorType)abortTest;
 
 @end

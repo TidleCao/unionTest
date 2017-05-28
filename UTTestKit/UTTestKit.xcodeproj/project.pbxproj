@@ -317,6 +317,7 @@
 				167C25E71ED1BD5C00C1828F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

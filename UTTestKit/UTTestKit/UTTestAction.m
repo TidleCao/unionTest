@@ -11,7 +11,9 @@
 @implementation UTTestAction
 
 - (void)execute {
-    
+    IMP imp = [_target methodForSelector:_action];
+    id (*func)(id, SEL, id, id) = (void *) imp;
+    _returnValue = func(_target, _action, _params, _context);
 }
 
 @end

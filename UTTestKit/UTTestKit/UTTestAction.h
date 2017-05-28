@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, UTType) {
     UTTypeVoid    = 0,
@@ -18,8 +19,13 @@ typedef NS_ENUM(NSUInteger, UTType) {
 
 @interface UTTestAction : NSObject
 @property UTType returnType;
+@property id target;
+@property SEL action;
 @property (readonly) id returnValue;
+@property NSDictionary *params;
+@property NSDictionary *context;
 
 - (void)execute;
 
 @end
+NS_ASSUME_NONNULL_END

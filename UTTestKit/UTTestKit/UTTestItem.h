@@ -49,7 +49,9 @@ typedef struct {
 @optional
 - (void)testItem:(UTTestItem*)testItem willStartTestAciotn:(UTTestAction*)testAction;
 - (void)testItem:(UTTestItem*)testItem didFinishTestAction:(UTTestAction *)testAction;
-
+- (void)testItemDidAbortTesting:(UTTestItem*)testItem;
+- (void)testItemDidStopTesting:(UTTestItem*)testItem;
+- (void)testItemDidFinishTesting:(UTTestItem*)testItem;
 @end
 
 // MARK: - UTTestItem
@@ -71,9 +73,11 @@ typedef struct {
 - (UTErrorType)runTest;
 
 // 暂停停止
+
 - (void)stopTest;
 
 // 放弃测试
+// 放弃测试不可继续测试。
 - (void)abortTest;
 
 // 恢复暂停的测试

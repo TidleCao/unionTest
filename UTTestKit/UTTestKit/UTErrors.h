@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, UTErrorType) {
     UTErrorTypeDisabled,        // 因被禁用引发的错误。
     UTErrorTypeUserStopped,     // 因用户停止操作引发的错误。
     UTErrorTypeUserAborted,     // 因用户放弃操作引发的错误。
+    UTErrorTypeUnknow = -1,     // 其他错误。
 };
 
 
