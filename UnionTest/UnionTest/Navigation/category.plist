@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>WORKSPACE</key>
+	<dict>
+		<key>TestStation</key>
+		<dict>
+			<key>NibName</key>
+			<string></string>
+			<key>Description</key>
+			<string>TestStation</string>
+		</dict>
+		<key>LogViewer</key>
+		<dict>
+			<key>NibName</key>
+			<string></string>
+			<key>Description</key>
+			<string>LogViewer</string>
+		</dict>
+	</dict>
+	<key>SETTINGS</key>
+	<dict>
+		<key>Configuration</key>
+		<dict>
+			<key>NibName</key>
+			<string></string>
+			<key>Description</key>
+			<string>LogViewer</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
